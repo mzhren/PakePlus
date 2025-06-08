@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 24 24">
+  <style>
+    .audio-arc {
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2;
+      stroke-linecap: round;
+    }
+    
+    #inner {
+      fill: currentColor;
+      stroke: none;
+      /* 移除inner的动画，保持始终显示 */
+    }
+    
+    <!-- #middle {
+      animation: middleArc 1.5s infinite;
+    }
+    
+    #outer {
+      animation: outerArc 1.5s infinite;
+    } -->
+    
+    @keyframes middleArc {
+      0% { opacity: 0; }
+      33.3% { opacity: 1; }
+      66.6% { opacity: 1; }
+      100% { opacity: 0; }
+    }
+    
+    @keyframes outerArc {
+      0%, 33.3% { opacity: 0; }
+      66.6% { opacity: 1; }
+      100% { opacity: 0; }
+    }
+  </style>
+  
+  <g transform="translate(6, 12) rotate(-45)">
+    <!-- 调整间距，确保完全显示 -->
+    <path id="inner" d="M0,0 L3,0 A3,3 0 0 1 0,3 Z"/>
+    <path id="middle" class="audio-arc" d="M6,0 A6,6 0 0 1 0,6"/>
+    <path id="outer" class="audio-arc" d="M9.5,0 A9.5,9.5 0 0 1 0,9.5"/>
+  </g>
+</svg>
